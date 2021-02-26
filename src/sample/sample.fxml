@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="600.0" style="-fx-background-color: #0A1F40;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="600.0" style="-fx-background-color: #0A1F40;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LogIn">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -37,13 +36,14 @@
                   <Font name="Candara" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="15.0" layoutY="120.0" promptText="*name*" />
-            <PasswordField layoutX="14.0" layoutY="201.0" promptText="*password**" />
-            <Button layoutX="51.0" layoutY="279.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="77.0" style="-fx-background-color: #FEFEFF;" text="OK">
+            <TextField fx:id="username" layoutX="15.0" layoutY="120.0" promptText="*name*" />
+            <PasswordField fx:id="password" layoutX="14.0" layoutY="201.0" promptText="*password**" />
+            <Button fx:id="button" layoutX="51.0" layoutY="279.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="24.0" prefWidth="77.0" style="-fx-background-color: #FEFEFF;" text="OK">
                <font>
                   <Font name="Calibri" size="12.0" />
                </font>
             </Button>
+            <Label fx:id="logerror" layoutX="65.0" layoutY="248.0" textFill="RED" />
          </children>
       </AnchorPane>
    </right>
