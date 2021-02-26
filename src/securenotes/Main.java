@@ -25,10 +25,10 @@ public class Main extends Application {
         Stage stg = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
         stg.setTitle("Secure Notes");
-        stg.setMaxHeight(651);
-        stg.setMaxWidth(964);
-        stg.setResizable(true);
-        stg.setScene(new Scene(root,964,651));
+        stg.setMaxHeight(660);
+        stg.setMaxWidth(970);
+        stg.setResizable(false);
+        stg.setScene(new Scene(root,965,660));
         stg.show();
         //stg.getScene().setRoot(root);
     }
