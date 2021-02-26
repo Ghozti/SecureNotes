@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
+import securenotes.Main;
 import securenotes.decryptor.Decryptor;
 import securenotes.encryptor.Encryptor;
 
@@ -27,7 +28,6 @@ public class NotePad {
     private String getTextToString(){
         return noteArea.getText();
     }
-
 
     public void encrypt(ActionEvent actionEvent) {
         noteArea.setText(new Encryptor().encrypt(getTextToString()));
@@ -67,5 +67,10 @@ public class NotePad {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
+    }
+
+    public void openDetailMenu(ActionEvent actionEvent) throws IOException {
+        Main main = new Main();
+        main.changeScene("scenes/changeInfo.fxml","secure notes", 585,430);
     }
 }

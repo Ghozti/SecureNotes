@@ -27,16 +27,19 @@ public class Main extends Application {
     /**
      * This method can be used to switch between scenes with the fxml parameter
      */
-    public void changeScene(String fxml) throws IOException {
+    public void changeScene(String fxml,String name, double w, double h) throws IOException {
         Stage stg = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
-        stg.setTitle("Secure Notes");
-        stg.setMaxHeight(660);
-        stg.setMaxWidth(970);
+        stg.setTitle(name);
+        stg.setMaxHeight(h);
+        stg.setMaxWidth(w);
         stg.setResizable(false);
-        stg.setScene(new Scene(root,965,660));
+        stg.setScene(new Scene(root,w,h));
         stg.show();
-        //stg.getScene().setRoot(root);
+    }
+
+    public void closeScene(Stage stage){
+        stage.close();
     }
 
     public static void main(String[] args) {
