@@ -1,4 +1,4 @@
-package sample;
+package securenotes.login;
 
 import com.sun.tools.javac.Main;
 import javafx.fxml.FXML;
@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
 import java.io.IOException;
 
 public class LogIn {
@@ -27,7 +26,7 @@ public class LogIn {
     private Label logerror;
 
     public void userLogIn() throws IOException {
-        sample.Main main = new Main();
+        securenotes.Main main = new Main();
         if (username.getText().equals("ghost") && password.getText().equals("123")){
             main.changeScene();
         }else if (username.getText().isEmpty() && password.getText().isEmpty()){
