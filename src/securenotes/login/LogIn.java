@@ -5,12 +5,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import securenotes.mainscreen.NotePad;
+
 import java.io.IOException;
 
 public class LogIn {
-
-    public LogIn(){
-    }
 
     @FXML
     private Button button;
@@ -24,7 +23,6 @@ public class LogIn {
     @FXML
     private Label logerror;
 
-
     public void logIn(javafx.event.ActionEvent actionEvent) throws IOException {
         checkLogin();
     }
@@ -37,7 +35,7 @@ public class LogIn {
         } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             logerror.setText("Please Enter Your Data");
         } else {
-            logerror.setText("Invalid User");
+            logerror.setText("          Invalid User");
         }
     }
 }

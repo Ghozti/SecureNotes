@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class Main extends Application {
@@ -17,14 +16,15 @@ public class Main extends Application {
         stage = primaryStage;
         primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("scenes/logIn.fxml"));
-        primaryStage.setTitle("Secure Notes");
+        primaryStage.setTitle("Secure Notes Login");
         primaryStage.setScene(new Scene(root, 755, 450));//w x h
         primaryStage.show();
     }
 
     public void changeScene(String fxml) throws IOException {
         Stage stg = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("scenes/mainScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+        stg.setTitle("Secure Notes");
         stg.setMaxHeight(651);
         stg.setMaxWidth(964);
         stg.setResizable(true);
@@ -32,8 +32,6 @@ public class Main extends Application {
         stg.show();
         //stg.getScene().setRoot(root);
     }
-
-
     public static void main(String[] args) {
         launch(args);
     }
