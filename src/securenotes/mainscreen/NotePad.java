@@ -4,21 +4,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
+import securenotes.decryptor.Decryptor;
+import securenotes.encryptor.Encryptor;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.util.Iterator;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class NotePad {
-
-    @FXML
-    ScrollBar scrollbar;
 
     @FXML
     MenuButton options;
@@ -26,8 +21,17 @@ public class NotePad {
     @FXML
     TextArea noteArea;
 
-    public String getTextToString(){
+    private String getTextToString(){
         return noteArea.getText();
+    }
+
+
+    public void encrypt(ActionEvent actionEvent) {
+        noteArea.setText(new Encryptor().encrypt(getTextToString()));
+    }
+
+    public void decryptText(ActionEvent actionEvent) {
+        noteArea.setText(new Decryptor().decrypt(getTextToString()));
     }
 
     public void saveFile(ActionEvent actionEvent) throws IOException {
@@ -42,10 +46,6 @@ public class NotePad {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-    }
-
-    public void encrypt(ActionEvent actionEvent) {
-
     }
 
     public void openFile(ActionEvent actionEvent) {

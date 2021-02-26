@@ -3,21 +3,20 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="651.0" prefWidth="964.0" style="-fx-background-color: #0A1F40;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="securenotes.mainscreen.NotePad">
    <children>
-      <ScrollBar fx:id="scrollbar" layoutX="943.0" layoutY="37.0" orientation="VERTICAL" prefHeight="610.0" prefWidth="14.0" style="-fx-background-color: #5E6061;" />
       <MenuButton fx:id="options" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: #0A1F40;" text="Options" textFill="WHITE">
         <items>
           <MenuItem mnemonicParsing="false" onAction="#saveFile" text="save" />
-          <MenuItem mnemonicParsing="false" onAction="#encrypt" text="encrypt" />
             <MenuItem mnemonicParsing="false" onAction="#openFile" text="open" />
+          <MenuItem mnemonicParsing="false" onAction="#encrypt" text="encrypt" />
+            <MenuItem mnemonicParsing="false" onAction="#decryptText" text="Decript" />
         </items>
       </MenuButton>
-      <TextArea fx:id="noteArea" layoutX="7.0" layoutY="41.0" prefHeight="604.0" prefWidth="929.0" AnchorPane.leftAnchor="7.0">
+      <TextArea fx:id="noteArea" layoutX="7.0" layoutY="41.0" prefHeight="600.0" prefWidth="950.0" AnchorPane.leftAnchor="7.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
