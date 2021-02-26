@@ -27,6 +27,7 @@ public class Main extends Application {
     /**
      * This method can be used to switch between scenes with the fxml parameter
      */
+
     public void changeScene(String fxml,String name, double w, double h) throws IOException {
         Stage stg = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(fxml));

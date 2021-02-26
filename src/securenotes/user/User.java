@@ -41,7 +41,6 @@ public class User {
             changeName(nName.getText());
             changePass(nPass.getText());
             infoError.setText("");
-            main.closeScene();
         }else {
             infoError.setText("Incorrect Credentials");
         }
@@ -49,7 +48,7 @@ public class User {
 
     private void changeName(String newName){
         try {
-            FileWriter writer = new FileWriter("name.txt");
+            FileWriter writer = new FileWriter("D:\\Java programs\\SecureNotes\\src\\securenotes\\user\\name.txt");
             writer.write(newName);
             writer.close();
         } catch (IOException e) {
@@ -59,7 +58,7 @@ public class User {
 
     private void changePass(String newPass){
         try {
-            FileWriter writer = new FileWriter("password.txt");
+            FileWriter writer = new FileWriter("D:\\Java programs\\SecureNotes\\src\\securenotes\\user\\password.txt");
             writer.write(newPass);
             writer.close();
         } catch (IOException e) {
