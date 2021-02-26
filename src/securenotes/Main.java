@@ -10,21 +10,27 @@ import java.io.IOException;
 
 public class Main extends Application {
 
-    private Stage stg;
+    Stage stage;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        stg = primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("logIn.fxml"));
+        stage = primaryStage;
+        primaryStage.setResizable(false);
+        Parent root = FXMLLoader.load(getClass().getResource("scenes/logIn.fxml"));
         primaryStage.setTitle("Secure Notes");
         primaryStage.setScene(new Scene(root, 755, 450));//w x h
-        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
     public void changeScene(String fxml) throws IOException {
-        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-        stg.getScene().setRoot(pane);
+        Stage stg = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("scenes/mainScreen.fxml"));
+        stg.setMaxHeight(651);
+        stg.setMaxWidth(964);
+        stg.setResizable(true);
+        stg.setScene(new Scene(root,964,651));
+        stg.show();
+        //stg.getScene().setRoot(root);
     }
 
 

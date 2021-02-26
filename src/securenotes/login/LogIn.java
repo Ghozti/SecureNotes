@@ -1,6 +1,5 @@
 package securenotes.login;
 
-import com.sun.tools.javac.Main;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -25,13 +24,19 @@ public class LogIn {
     @FXML
     private Label logerror;
 
-    public void userLogIn() throws IOException {
-        securenotes.Main main = new Main();
-        if (username.getText().equals("ghost") && password.getText().equals("123")){
-            main.changeScene();
-        }else if (username.getText().isEmpty() && password.getText().isEmpty()){
+
+    public void logIn(javafx.event.ActionEvent actionEvent) throws IOException {
+        checkLogin();
+    }
+
+    private void checkLogin() throws IOException {
+        securenotes.Main main = new securenotes.Main();
+        if (username.getText().equals("ghost") && password.getText().equals("123")) {
+            main.changeScene("scenes/mainScreen.fxml");
+            logerror.setText("");
+        } else if (username.getText().isEmpty() && password.getText().isEmpty()) {
             logerror.setText("Please Enter Your Data");
-        }else {
+        } else {
             logerror.setText("Invalid User");
         }
     }
