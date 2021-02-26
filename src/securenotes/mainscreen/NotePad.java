@@ -1,6 +1,5 @@
 package securenotes.mainscreen;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
@@ -14,6 +13,10 @@ import java.util.Scanner;
 
 
 public class NotePad {
+
+    /***********************
+     *mainScreen.fxml controller
+     ***********************/
 
     @FXML
     MenuButton options;

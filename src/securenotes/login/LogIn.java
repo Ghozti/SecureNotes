@@ -10,6 +10,10 @@ import java.io.IOException;
 
 public class LogIn {
 
+    /***********************
+     *logIn.fxml controller
+     ***********************/
+
     @FXML
     private Button button;
 

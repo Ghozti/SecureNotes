@@ -11,6 +11,9 @@ public class Main extends Application {
 
     Stage stage;
 
+    /**
+     * sets the first scene (log in scene)
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
@@ -21,6 +24,9 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    /**
+     * This method can be used to switch between scenes with the fxml parameter
+     */
     public void changeScene(String fxml) throws IOException {
         Stage stg = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
@@ -32,6 +38,7 @@ public class Main extends Application {
         stg.show();
         //stg.getScene().setRoot(root);
     }
+
     public static void main(String[] args) {
         launch(args);
     }
