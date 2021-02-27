@@ -17,7 +17,7 @@
             <MenuItem mnemonicParsing="false" onAction="#openDetailMenu" text="Change details" />
         </items>
       </MenuButton>
-      <TextArea fx:id="noteArea" layoutX="7.0" layoutY="41.0" prefHeight="600.0" prefWidth="950.0" AnchorPane.leftAnchor="7.0">
+      <TextArea fx:id="noteArea" layoutX="7.0" layoutY="41.0" prefHeight="604.0" prefWidth="950.0" AnchorPane.leftAnchor="7.0">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
