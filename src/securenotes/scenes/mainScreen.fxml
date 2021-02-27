@@ -10,11 +10,11 @@
    <children>
       <MenuButton fx:id="options" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: #0A1F40;" text="Options" textFill="WHITE">
         <items>
-          <MenuItem mnemonicParsing="false" onAction="#saveFile" text="save" />
-            <MenuItem mnemonicParsing="false" onAction="#openFile" text="open" />
-          <MenuItem mnemonicParsing="false" onAction="#encrypt" text="encrypt" />
-            <MenuItem mnemonicParsing="false" onAction="#decryptText" text="Decript" />
-            <MenuItem mnemonicParsing="false" onAction="#openDetailMenu" text="change details" />
+          <MenuItem mnemonicParsing="false" onAction="#saveFile" text="Save" />
+            <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open" />
+          <MenuItem mnemonicParsing="false" onAction="#encrypt" text="Encrypt" />
+            <MenuItem mnemonicParsing="false" onAction="#decryptText" text="Decrypt" />
+            <MenuItem mnemonicParsing="false" onAction="#openDetailMenu" text="Change details" />
         </items>
       </MenuButton>
       <TextArea fx:id="noteArea" layoutX="7.0" layoutY="41.0" prefHeight="600.0" prefWidth="950.0" AnchorPane.leftAnchor="7.0">
