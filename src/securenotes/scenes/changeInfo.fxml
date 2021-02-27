@@ -41,5 +41,6 @@
       </Text>
       <Button fx:id="savebtn" layoutX="254.0" layoutY="301.0" mnemonicParsing="false" onAction="#save" prefHeight="23.0" prefWidth="92.0" style="-fx-background-color: #0A1F40;" text="Save" textFill="WHITE" />
       <Label fx:id="infoError" layoutX="262.0" layoutY="341.0" prefHeight="17.0" prefWidth="77.0" textFill="RED" />
+      <Label fx:id="goodInfo" layoutX="219.0" layoutY="369.0" textFill="#00eeff" />
    </children>
 </AnchorPane>

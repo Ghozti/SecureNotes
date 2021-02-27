@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class User {
@@ -35,12 +37,16 @@ public class User {
     @FXML
     Label infoError;
 
+    @FXML
+    Label goodInfo;
+
     public void save(ActionEvent actionEvent) {
         Main main = new Main();
         if (oName.getText().equals(getName()) && oPass.getText().equals(getPass())){
             changeName(nName.getText());
             changePass(nPass.getText());
             infoError.setText("");
+            goodInfo.setText("success! you may close this now");
         }else {
             infoError.setText("Incorrect Credentials");
         }
@@ -48,7 +54,8 @@ public class User {
 
     private void changeName(String newName){
         try {
-            FileWriter writer = new FileWriter("D:\\Java programs\\SecureNotes\\src\\securenotes\\user\\name.txt");
+            Path path = Paths.get("name.txt");
+            FileWriter writer = new FileWriter(String.valueOf(path.toAbsolutePath()));
             writer.write(newName);
             writer.close();
         } catch (IOException e) {
@@ -58,7 +65,8 @@ public class User {
 
     private void changePass(String newPass){
         try {
-            FileWriter writer = new FileWriter("D:\\Java programs\\SecureNotes\\src\\securenotes\\user\\password.txt");
+            Path path = Paths.get("password.txt");
+            FileWriter writer = new FileWriter(String.valueOf(path.toAbsolutePath()));
             writer.write(newPass);
             writer.close();
         } catch (IOException e) {
@@ -68,7 +76,8 @@ public class User {
 
     public String getName(){
         try {
-            File nameFile = new File("D:\\Java programs\\SecureNotes\\src\\securenotes\\user\\name.txt");
+            Path path = Paths.get("name.txt");
+            File nameFile = new File(String.valueOf(path.toAbsolutePath()));
             Scanner reader = new Scanner(nameFile);
             String name = "";
             while (reader.hasNextLine()) {
@@ -85,7 +94,8 @@ public class User {
 
     public String getPass(){
         try {
-            File passFile = new File("D:\\Java programs\\SecureNotes\\src\\securenotes\\user\\password.txt");
+            Path path = Paths.get("password.txt");
+            File passFile = new File(String.valueOf(path.toAbsolutePath()));
             Scanner reader = new Scanner(passFile);
             String password = "";
             while (reader.hasNextLine()) {

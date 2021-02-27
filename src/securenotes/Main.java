@@ -39,10 +39,6 @@ public class Main extends Application {
         stg.show();
     }
 
-    public void closeScene(Stage stage){
-        stage.close();
-    }
-
     public static void main(String[] args) {
         launch(args);
     }

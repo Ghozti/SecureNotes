@@ -71,6 +71,6 @@ public class NotePad {
 
     public void openDetailMenu(ActionEvent actionEvent) throws IOException {
         Main main = new Main();
-        main.changeScene("scenes/changeInfo.fxml","secure notes", 585,430);
+        main.changeScene("scenes/changeInfo.fxml","secure notes credentials changer", 585,430);
     }
 }
