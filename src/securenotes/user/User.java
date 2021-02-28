@@ -6,13 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import securenotes.Main;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.file.Path;
+import java.io.*;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Scanner;
+import java.nio.file.StandardOpenOption;
+
 
 public class User {
     /***************************
@@ -40,7 +39,7 @@ public class User {
     @FXML
     Label goodInfo;
 
-    public void save(ActionEvent actionEvent) {
+    public void save(ActionEvent actionEvent) throws IOException, URISyntaxException {
         Main main = new Main();
         if (oName.getText().equals(getName()) && oPass.getText().equals(getPass())){
             changeName(nName.getText());
@@ -52,65 +51,19 @@ public class User {
         }
     }
 
-    private void changeName(String newName){
-        try {
-            Path path = Paths.get("name.txt");
-            FileWriter writer = new FileWriter(String.valueOf(path.toAbsolutePath()));
-            writer.write(newName);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void changeName(String newName) throws IOException {
+        Files.write(Paths.get("name.txt"), newName.getBytes(), StandardOpenOption.CREATE);
     }
 
-    private void changePass(String newPass){
-        try {
-            Path path = Paths.get("password.txt");
-            FileWriter writer = new FileWriter(String.valueOf(path.toAbsolutePath()));
-            writer.write(newPass);
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void changePass(String newPass) throws IOException {
+        Files.write(Paths.get("password.txt"), newPass.getBytes(), StandardOpenOption.CREATE);
     }
 
-    public String getName(){
-        try {
-            Path path = Paths.get("name.txt");
-            File nameFile = new File(String.valueOf(path.toRealPath()));
-            Scanner reader = new Scanner(nameFile);
-            String name = "";
-            while (reader.hasNextLine()) {
-                name = reader.nextLine();
-            }
-            reader.close();
-            return name;
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "";
+    public String getName() throws IOException, URISyntaxException {
+        return new String(Files.readAllBytes(Paths.get("name.txt")));
     }
 
-    public String getPass(){
-        try {
-            Path path = Paths.get("password.txt");
-            File passFile = new File(String.valueOf(path.toRealPath()));
-            Scanner reader = new Scanner(passFile);
-            String password = "";
-            while (reader.hasNextLine()) {
-                password = reader.nextLine();
-            }
-            reader.close();
-            return password;
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "";
+    public String getPass() throws IOException, URISyntaxException {
+        return new String(Files.readAllBytes(Paths.get("password.txt")));
     }
 }

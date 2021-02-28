@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import securenotes.user.User;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class LogIn {
 
@@ -27,11 +28,11 @@ public class LogIn {
     @FXML
     private Label logerror;
 
-    public void logIn(javafx.event.ActionEvent actionEvent) throws IOException {
+    public void logIn(javafx.event.ActionEvent actionEvent) throws IOException, URISyntaxException {
         checkLogin();
     }
 
-    private void checkLogin() throws IOException {
+    private void checkLogin() throws IOException, URISyntaxException {
         securenotes.Main main = new securenotes.Main();
         User user = new User();
         if (username.getText().equals(user.getName()) && password.getText().equals(user.getPass())) {
