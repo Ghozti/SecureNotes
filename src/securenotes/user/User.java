@@ -77,7 +77,7 @@ public class User {
     public String getName(){
         try {
             Path path = Paths.get("name.txt");
-            File nameFile = new File(String.valueOf(path.toAbsolutePath()));
+            File nameFile = new File(String.valueOf(path.toRealPath()));
             Scanner reader = new Scanner(nameFile);
             String name = "";
             while (reader.hasNextLine()) {
@@ -88,6 +88,8 @@ public class User {
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return "";
     }
@@ -95,7 +97,7 @@ public class User {
     public String getPass(){
         try {
             Path path = Paths.get("password.txt");
-            File passFile = new File(String.valueOf(path.toAbsolutePath()));
+            File passFile = new File(String.valueOf(path.toRealPath()));
             Scanner reader = new Scanner(passFile);
             String password = "";
             while (reader.hasNextLine()) {
@@ -105,6 +107,8 @@ public class User {
             return password;
         } catch (FileNotFoundException e) {
             System.out.println("An error occurred.");
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return "";

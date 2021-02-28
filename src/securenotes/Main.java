@@ -23,7 +23,6 @@ public class Main extends Application {
         primaryStage.setTitle("Secure Notes Login");
         primaryStage.setScene(new Scene(root, 755, 450));//w x h
         primaryStage.show();
-        primaryStage.getIcons().add(new Image("icon.png"));
     }
 
     /**
@@ -39,7 +38,6 @@ public class Main extends Application {
         stg.setResizable(false);
         stg.setScene(new Scene(root,w,h));
         stg.show();
-        stg.getIcons().add(new Image("icon.png"));
     }
 
     public static void main(String[] args) {
