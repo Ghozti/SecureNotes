@@ -5,11 +5,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
+import javafx.stage.Window;
 import securenotes.Main;
 import securenotes.decryptor.Decryptor;
 import securenotes.encryptor.Encryptor;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Scanner;
 
 
@@ -39,32 +42,44 @@ public class NotePad {
 
     public void saveFile(ActionEvent actionEvent) throws IOException {
         FileChooser fileChooser = new FileChooser();
-        File selectedFile = fileChooser.showOpenDialog(null);
-
+        Window stage = options.getScene().getWindow();
+        fileChooser.setTitle("save");
+        fileChooser.setInitialFileName("myNote");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("text file","*.txt"));
         try {
-            FileWriter myWriter = new FileWriter(selectedFile);
-            myWriter.write(noteArea.getText());
-            myWriter.close();
-        } catch (IOException e) {
-            System.out.println("An error occurred.");
+            File file = fileChooser.showSaveDialog(stage);
+            fileChooser.setInitialDirectory(file.getParentFile());
+            FileWriter writer = new FileWriter(file);
+            writer.write(noteArea.getText());
+            writer.close();
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
 
     public void openFile(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
-        File selectedFile = fileChooser.showOpenDialog(null);
-
+        Window stage = options.getScene().getWindow();
+        fileChooser.setTitle("open");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("text file","*.txt"));
         try {
-            if (selectedFile != null) {
-                Scanner reader = new Scanner(selectedFile);
-                while (reader.hasNextLine()) {
-                    noteArea.setText(reader.nextLine());
+            File file = fileChooser.showOpenDialog(stage);
+            fileChooser.setInitialDirectory(file.getParentFile());
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            try {
+                StringBuilder sb = new StringBuilder();
+                String line = reader.readLine();
+
+                while (line != null) {
+                    sb.append(line);
+                    sb.append(System.lineSeparator());
+                    line = reader.readLine();
                 }
+                noteArea.setText(sb.toString());
+            } finally {
                 reader.close();
             }
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+        }catch (Exception e){
             e.printStackTrace();
         }
     }

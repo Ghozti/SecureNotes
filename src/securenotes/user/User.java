@@ -53,15 +53,14 @@ public class User {
     }
 
     private void changeName(String newName) throws IOException {
-        Files.write(Paths.get("").resolve("out/artifacts/SecureNotes_jar/details/name.txt"), newName.getBytes(), StandardOpenOption.CREATE);
+        Files.write(Paths.get("").toAbsolutePath().resolve("details/name.txt"), newName.getBytes(), StandardOpenOption.CREATE);
     }
 
     private void changePass(String newPass) throws IOException {
-        Files.write(Paths.get("").resolve("out/artifacts/SecureNotes_jar/details/name.txt"), newPass.getBytes(), StandardOpenOption.CREATE);
+        Files.write(Paths.get("").toAbsolutePath().resolve("details/password.txt"), newPass.getBytes(), StandardOpenOption.CREATE);
     }
 
     public String getName() throws IOException{
-        System.out.println(readResource("/name.txt"));
         return readResource("/name.txt");
     }
 
@@ -71,7 +70,6 @@ public class User {
 
     private String readResource(String name) throws IOException {
         try(var stream = getClass().getResourceAsStream(name)) {
-            System.out.println(getClass().getResourceAsStream(name));
             return new String((stream).readAllBytes(), StandardCharsets.UTF_8);
         }
     }
