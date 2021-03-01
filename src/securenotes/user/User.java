@@ -75,4 +75,6 @@ public class User {
             return new String((stream).readAllBytes(), StandardCharsets.UTF_8);
         }
     }
+
+    //TODO maybe make this program create a folder to store the new name.txt and password.txt to be able to read and write
 }

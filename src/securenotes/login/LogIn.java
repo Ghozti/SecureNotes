@@ -32,7 +32,7 @@ public class LogIn {
         checkLogin();
     }
 
-    private void checkLogin() throws IOException, URISyntaxException {
+    private void checkLogin() throws IOException{
         securenotes.Main main = new securenotes.Main();
         User user = new User();
         if (username.getText().equals(user.getName()) && password.getText().equals(user.getPass())) {
