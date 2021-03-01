@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import securenotes.Main;
 import java.io.*;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
@@ -60,10 +61,18 @@ public class User {
     }
 
     public String getName() throws IOException{
-        return new String(Files.readAllBytes(Paths.get("").resolve("out/artifacts/SecureNotes_jar/details/name.txt")));
+        System.out.println(readResource("/name.txt"));
+        return readResource("/name.txt");
     }
 
     public String getPass() throws IOException{
-        return new String(Files.readAllBytes(Paths.get("").resolve("out/artifacts/SecureNotes_jar/details/password.txt")));
+        return readResource("/password.txt");
+    }
+
+    private String readResource(String name) throws IOException {
+        try(var stream = getClass().getResourceAsStream(name)) {
+            System.out.println(getClass().getResourceAsStream(name));
+            return new String((stream).readAllBytes(), StandardCharsets.UTF_8);
+        }
     }
 }
