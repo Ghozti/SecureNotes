@@ -9,11 +9,8 @@ import javafx.stage.Window;
 import securenotes.Main;
 import securenotes.decryptor.Decryptor;
 import securenotes.encryptor.Encryptor;
-
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Scanner;
+
 
 
 public class NotePad {
