@@ -52,18 +52,18 @@ public class User {
     }
 
     private void changeName(String newName) throws IOException {
-        Files.write(Paths.get("name.txt"), newName.getBytes(), StandardOpenOption.CREATE);
+        Files.write(Paths.get("").resolve("out/artifacts/SecureNotes_jar/details/name.txt"), newName.getBytes(), StandardOpenOption.CREATE);
     }
 
     private void changePass(String newPass) throws IOException {
-        Files.write(Paths.get("password.txt"), newPass.getBytes(), StandardOpenOption.CREATE);
+        Files.write(Paths.get("").resolve("out/artifacts/SecureNotes_jar/details/name.txt"), newPass.getBytes(), StandardOpenOption.CREATE);
     }
 
-    public String getName() throws IOException, URISyntaxException {
-        return new String(Files.readAllBytes(Paths.get("name.txt")));
+    public String getName() throws IOException{
+        return new String(Files.readAllBytes(Paths.get("").resolve("out/artifacts/SecureNotes_jar/details/name.txt")));
     }
 
-    public String getPass() throws IOException, URISyntaxException {
-        return new String(Files.readAllBytes(Paths.get("password.txt")));
+    public String getPass() throws IOException{
+        return new String(Files.readAllBytes(Paths.get("").resolve("out/artifacts/SecureNotes_jar/details/password.txt")));
     }
 }
