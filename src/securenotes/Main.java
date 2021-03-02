@@ -22,7 +22,6 @@ public class Main extends Application {
         primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("scenes/logIn.fxml"));
         primaryStage.setTitle("Secure Notes Login");
-        primaryStage.getIcons().add(new Image("assets/icon.png"));
         primaryStage.setScene(new Scene(root, 755, 450));//w x h
         primaryStage.show();
     }
@@ -35,7 +34,6 @@ public class Main extends Application {
         Stage stg = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
         stg.setTitle(name);
-        stg.getIcons().add(new Image("assets/icon.png"));
         stg.setMaxHeight(h);
         stg.setMaxWidth(w);
         stg.setResizable(false);
