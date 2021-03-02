@@ -4,14 +4,13 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import securenotes.user.detailscreator.DetailsCreator;
 import java.io.IOException;
 
 
 public class Main extends Application {
-
-    Stage stage;
 
     /**
      * sets the first scene (log in scene)
@@ -20,10 +19,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         DetailsCreator detailsCreator = new DetailsCreator();
         detailsCreator.createFiles();
-        stage = primaryStage;
         primaryStage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("scenes/logIn.fxml"));
         primaryStage.setTitle("Secure Notes Login");
+        primaryStage.getIcons().add(new Image("assets/icon.png"));
         primaryStage.setScene(new Scene(root, 755, 450));//w x h
         primaryStage.show();
     }
@@ -36,6 +35,7 @@ public class Main extends Application {
         Stage stg = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(fxml));
         stg.setTitle(name);
+        stg.getIcons().add(new Image("assets/icon.png"));
         stg.setMaxHeight(h);
         stg.setMaxWidth(w);
         stg.setResizable(false);

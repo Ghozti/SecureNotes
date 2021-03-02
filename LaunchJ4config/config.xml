@@ -11,7 +11,7 @@
   <downloadUrl>http://java.com/download</downloadUrl>
   <supportUrl></supportUrl>
   <stayAlive>false</stayAlive>
-  <restartOnCrash>false</restartOnCrash>
+  <restartOnCrash>true</restartOnCrash>
   <manifest></manifest>
   <icon>C:\Users\ybald\Downloads\icon.ico</icon>
   <singleInstance>
@@ -38,7 +38,7 @@
     <companyName>Ghozti</companyName>
     <internalName>SecureNotes</internalName>
     <originalFilename>SecureNotes.exe</originalFilename>
-    <trademarks></trademarks>
+    <trademarks>SecureNotes </trademarks>
     <language>ENGLISH_US</language>
   </versionInfo>
 </launch4jConfig>
