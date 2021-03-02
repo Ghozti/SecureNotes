@@ -12,6 +12,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Scanner;
 
 
 public class User {
@@ -61,18 +62,25 @@ public class User {
     }
 
     public String getName() throws IOException{
-        return readResource("/name.txt");
+        File directory = new File(System.getProperty("user.home") + "/SecureNotesDetails/name.txt").getAbsoluteFile();
+        String content;
+        content = new String(Files.readAllBytes(Paths.get(String.valueOf(directory))));
+        return content;
     }
 
     public String getPass() throws IOException{
-        return readResource("/password.txt");
+        File directory = new File(System.getProperty("user.home") + "/SecureNotesDetails/password.txt").getAbsoluteFile();
+        String content;
+        content = new String(Files.readAllBytes(Paths.get(String.valueOf(directory))));
+        return content;
     }
-
+/*
     private String readResource(String name) throws IOException {
         try(var stream = getClass().getResourceAsStream(name)) {
             return new String((stream).readAllBytes(), StandardCharsets.UTF_8);
         }
     }
+ */
 
     //TODO maybe make this program create a folder to store the new name.txt and password.txt to be able to read and write
 }
