@@ -29,8 +29,11 @@ public class DetailsCreator {
 
 
     private void createPassword(String path) throws IOException {
-        try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path + "/password.txt"), "utf-8"))) {
-            writer.write("123");
+        File directory = new File((path + "/password.txt"));
+        if (!directory.exists()) {
+            try (Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(directory), "utf-8"))) {
+                writer.write("123");
+            }
         }
     }
 }
