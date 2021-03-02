@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import securenotes.user.detailscreator.DetailsCreator;
 import java.io.IOException;
 
 

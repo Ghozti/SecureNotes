@@ -7,7 +7,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #0A1F40;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="securenotes.user.User">
    <children>
       <TextField fx:id="oPass" layoutX="66.0" layoutY="208.0" />
@@ -40,7 +39,7 @@
          </font>
       </Text>
       <Button fx:id="savebtn" layoutX="254.0" layoutY="301.0" mnemonicParsing="false" onAction="#save" prefHeight="23.0" prefWidth="92.0" style="-fx-background-color: #0A1F40;" text="Save" textFill="WHITE" />
-      <Label fx:id="infoError" layoutX="262.0" layoutY="341.0" prefHeight="17.0" prefWidth="77.0" textFill="RED" />
+      <Label fx:id="infoError" layoutX="251.0" layoutY="340.0" prefHeight="17.0" prefWidth="98.0" textFill="RED" />
       <Label fx:id="goodInfo" layoutX="219.0" layoutY="369.0" textFill="#00eeff" />
    </children>
 </AnchorPane>

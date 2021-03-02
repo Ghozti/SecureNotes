@@ -46,7 +46,7 @@ public class User {
             infoError.setText("");
             goodInfo.setText("success! you may close this now");
         }else {
-            infoError.setText("Incorrect Credentials");
+            infoError.setText("Invalid Credentials");
         }
     }
 
@@ -78,13 +78,4 @@ public class User {
         content = new String(Files.readAllBytes(Paths.get(String.valueOf(directory))));
         return content;
     }
-/*
-    private String readResource(String name) throws IOException {
-        try(var stream = getClass().getResourceAsStream(name)) {
-            return new String((stream).readAllBytes(), StandardCharsets.UTF_8);
-        }
-    }
- */
-
-    //TODO maybe make this program create a folder to store the new name.txt and password.txt to be able to read and write
 }

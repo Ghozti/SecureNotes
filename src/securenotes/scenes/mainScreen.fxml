@@ -5,6 +5,8 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="651.0" prefWidth="964.0" style="-fx-background-color: #0A1F40;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="securenotes.mainscreen.NotePad">
    <children>
@@ -22,6 +24,11 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextArea>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="382.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Secure Notes Text Editor" wrappingWidth="199.13671875">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
    </children>
    <cursor>
       <Cursor fx:constant="HAND" />
