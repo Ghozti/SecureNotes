@@ -6,8 +6,8 @@ public class Decryptor {
         StringBuilder bld = new StringBuilder();
 
         char[] characters = text.toCharArray();
-        for (int i = 0; i < characters.length; i++) {
-            characters[i] -= 1000;
+        for (int i = 0; i < characters.length-1; i++) {
+            characters[i] -= 70;
             bld.append(characters[i]);
         }
         return bld.toString();

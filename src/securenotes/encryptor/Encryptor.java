@@ -7,7 +7,7 @@ public class Encryptor {
         char[] characters = text.toCharArray();
 
         for (int i = 0; i < characters.length; i++) {
-            characters[i] += 1000;
+            characters[i] += 70;
             bld.append(characters[i]);
         }
         return bld.toString();
