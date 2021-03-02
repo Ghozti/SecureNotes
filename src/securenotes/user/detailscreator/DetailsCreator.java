@@ -1,4 +1,4 @@
-package securenotes;
+package securenotes.user.detailscreator;
 import java.io.*;
 
 public class DetailsCreator {

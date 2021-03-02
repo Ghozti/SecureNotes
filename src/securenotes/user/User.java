@@ -8,11 +8,8 @@ import javafx.scene.control.TextField;
 import securenotes.Main;
 import java.io.*;
 import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.Scanner;
 
 
 public class User {
@@ -54,11 +51,18 @@ public class User {
     }
 
     private void changeName(String newName) throws IOException {
-        Files.write(Paths.get("").toAbsolutePath().resolve("details/name.txt"), newName.getBytes(), StandardOpenOption.CREATE);
+        File directory = new File(System.getProperty("user.home") + "/SecureNotesDetails/name.txt").getAbsoluteFile();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(directory));
+        writer.write(newName);
+        writer.close();
     }
 
+
     private void changePass(String newPass) throws IOException {
-        Files.write(Paths.get("").toAbsolutePath().resolve("details/password.txt"), newPass.getBytes(), StandardOpenOption.CREATE);
+        File directory = new File(System.getProperty("user.home") + "/SecureNotesDetails/password.txt").getAbsoluteFile();
+        BufferedWriter writer = new BufferedWriter(new FileWriter(directory));
+        writer.write(newPass);
+        writer.close();
     }
 
     public String getName() throws IOException{

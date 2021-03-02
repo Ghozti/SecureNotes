@@ -2,7 +2,7 @@ package securenotes.encryptor;
 
 public class Encryptor {
 
-    public String encrypt(String text,int level){
+    public String encrypt(String text){
         StringBuilder bld = new StringBuilder();
         char[] characters = text.toCharArray();
 

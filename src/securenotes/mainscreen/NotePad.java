@@ -30,11 +30,11 @@ public class NotePad {
     }
 
     public void encrypt(ActionEvent actionEvent) {
-        noteArea.setText(new Encryptor().encrypt(getTextToString(),0));
+        noteArea.setText(new Encryptor().encrypt(getTextToString()));
     }
 
     public void decryptText(ActionEvent actionEvent) {
-        noteArea.setText(new Decryptor().decrypt(getTextToString(),0));
+        noteArea.setText(new Decryptor().decrypt(getTextToString()));
     }
 
     public void saveFile(ActionEvent actionEvent) throws IOException {

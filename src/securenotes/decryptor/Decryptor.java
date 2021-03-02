@@ -2,7 +2,7 @@ package securenotes.decryptor;
 
 public class Decryptor {
 
-    public String decrypt(String text,int level){
+    public String decrypt(String text){
         StringBuilder bld = new StringBuilder();
 
         char[] characters = text.toCharArray();
