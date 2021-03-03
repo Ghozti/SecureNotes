@@ -4,13 +4,18 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import securenotes.user.detailscreator.DetailsCreator;
 import java.io.IOException;
 
 
 public class Main extends Application {
+
+    /*******************************************************************************************************************
+     * @author ghozti
+     * this class will set the first stage (the log in screen)
+     * and has an utility method to change screens
+     ******************************************************************************************************************/
 
     /**
      * sets the first scene (log in scene)

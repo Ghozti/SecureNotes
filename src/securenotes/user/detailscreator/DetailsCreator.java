@@ -3,6 +3,18 @@ import java.io.*;
 
 public class DetailsCreator {
 
+    /*******************************************************************************************************************
+     * @author ghozti
+     * Details creator has 4 methods
+     * createFiles, createDirectory, createName, createPassword
+     * createFiles will call all of the other 3 methods to create everything
+     * createDirectory will create a folder called SecureNotesDetails in the user's home directory
+     * createName will then get the created folder and create "name.txt" in that folder
+     * same goes for password except it creates "password.txt"
+     * these 2 methods also check if the files already exists. if so it will not write anything there
+       if not then it wills set "ghost" and "123" as the default name and password
+     ******************************************************************************************************************/
+
     public void createFiles() throws IOException {
         String dir = createDirectory();
         createName(dir);

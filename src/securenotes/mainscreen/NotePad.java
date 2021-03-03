@@ -15,6 +15,18 @@ import java.io.*;
 
 public class NotePad {
 
+    /***********************************************************************************************************************************
+     * @author ghozti
+     * This class is the main atraction for the app and the mainScreen.fxml controller
+     * it creates a method called getTextToString which will be used to get the note area's user inputted text.
+     * the encrypt, decrypt, saveFile,openFile and openDetailMenu methods are all called when an user interacts with something in the UI
+     * encrypt will create an encryptor object and call it's encrypt method along with adding the note area string as it's argument
+     * decrypt will do the same except it calls the decryptor
+     * Savefile and open file will be called when the user chooses "save" or "open" respectively. This method will open file explorer to
+       either save the current note area into a new or existing file.
+     * openDetailMenu will create a main object and change the scene to "changeInfo.fxml"
+     **********************************************************************************************************************************/
+
     /***********************
      *mainScreen.fxml controller
      ***********************/

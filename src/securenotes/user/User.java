@@ -13,6 +13,39 @@ import java.nio.file.Paths;
 
 
 public class User {
+
+    /*******************************************************************************************************************
+     * @author ghozti
+     * The User class is an utility and changeInfo controller class
+     *     @FXML
+     *     TextField oPass; <-- this is the old password text field
+     *
+     *     @FXML
+     *     TextField nPass; <-- this is the new password text field
+     *
+     *     @FXML
+     *     TextField oName; <-- this is the old name text field
+     *
+     *     @FXML
+     *     TextField nName; <-- this is the new name text field
+     *
+     *     @FXML
+     *     Button savebtn; <-- this is the button displayed in the screen
+     *
+     *     @FXML
+     *     Label infoError; <-- this label will be called if the user entered invalid credits
+     *     @FXML
+     *     Label goodInfo; <-- this label will be called if the change was successful
+     *
+     *     the save method will be called once the user presses the button displayed in the screen it will check to see
+           if the credentials match if so it will set the new name and password to what the user chose.
+
+     *      changeName will be simply get the name.txt in the created folder (see details creator)
+            and override the text to the new text (same for changePass)
+
+     *      getName and getPass will each get the text from name.txt and password.txt
+     ******************************************************************************************************************/
+
     /***************************
      * changeInfo controller****
      **************************/
