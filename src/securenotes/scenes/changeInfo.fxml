@@ -33,7 +33,7 @@
             <Font name="Marlett" size="25.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="397.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Pass">
+      <Text fill="WHITE" layoutX="369.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Password">
          <font>
             <Font name="Marlett" size="25.0" />
          </font>
