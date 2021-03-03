@@ -38,14 +38,14 @@ If you wish to use this to "strengthen" the level of encryption keep in mind how
 
 - Any and all files encrypted by Secure Notes can ONLY be decrypted by Secure Notes. Same goes for Decrypting. Only Secure note encrypted files can be decrypted by SecureNotes.
 
-- SecureNotes will require java 15 and JRE 8 see more at https://java.com/en/
+- SecureNotes will require atleast java 11 and JRE 8 see more at https://java.com/en/
 
 
 # Using SecureNotes on Windows
 Once you install the zip file you may open the folder to "\SecureNotes\SecureNotes.exe" and doubling clicking the .exe file to run the program.
 
 # Using SecureNotes on Linux and Mac
-Once you install the zip file you may open the folder to "\SecureNotes\out\artifacts\SecureNotes_jar\SecureNotes.jar" and doubling clicking the .exe file to run the program.
+Once you install the zip file you may open the folder to "\SecureNotes\out\artifacts\SecureNotes_jar\SecureNotes.jar" and doubling clicking the .jar file to run the program.
 
 # launching secureNotes on a terminal 
 ```java -jar PATH TO JAR``` (replace PATH TO JAR with the absolute path to the .jar)
